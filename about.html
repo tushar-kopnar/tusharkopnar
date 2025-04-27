@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mrtusharkopnar</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: black;
+            color: #fff;
+            font-family: 'Poppins', sans-serif;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            padding: 20px 0;
+            margin: 0;
+        }
+
+        /* About Section */
+        .about {
+            display: flex;
+            flex-direction: column; /* Stack content vertically */
+            align-items: center;
+            gap: 20px; /* Space between image and content */
+            max-width: 1000px;
+            width: 100%;
+            padding: 20px;
+            margin-top: 40px; /* Added space on top */
+        }
+
+        .about-image img {
+      width: 100%; /* Full width inside container */
+      height: 400px; /* Slightly taller for balance */
+      object-fit: cover;
+      border-radius: 15px;
+      object-position: center;
+    }
+
+        .about-content {
+            text-align: center;
+        }
+
+        .about-content h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .about-content p {
+            font-size: 18px;
+            line-height: 1.6;
+            color: #bfbfbf;
+            margin-top: 10px;
+        }
+
+        /* About Details Section */
+        .about-container {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 30px 20px;
+            text-align: center;
+            background-color: black; /* Dark background for contrast */
+            border-radius: 10px;
+            box-shadow: 0 4px 8px black;
+        }
+
+        .about-container h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #e91e63; /* Accent color */
+        }
+
+        .about-container p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: #bfbfbf;
+            opacity: 0.9;
+        }
+    </style>
+</head>
+<body>
+    <section class="about">
+        <div class="about-image">
+            <img src="myPhotographs/33.jpg" alt="About Us Image">
+        </div>
+        <div class="about-content">
+            <h1>About Us</h1>
+            <p> I'm Tushar Kopnar, a passionate 
+                <strong>cinematographer, editor, story writer, photographer, reels editor, and social media manager</strong> 
+                with years of experience capturing stunning visuals that tell powerful stories.</p>
+        </div>
+    </section>
+    <section class="about-container">
+        <h2>Who Am I?</h2>
+        <p>
+            From breathtaking landscapes to dynamic video productions, I thrive in creating <strong>cinematic experiences</strong> that leave a lasting impact. 
+            With expertise in <strong>filmmaking, photography, and editing</strong>, I bring stories to life with passion and precision.
+        </p>
+    </section>
+</body>
+</html>

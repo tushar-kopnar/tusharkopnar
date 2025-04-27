@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>mrtusharkopnar</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Arial', sans-serif;
+    }
+
+    body, html {
+      height: 100%;
+      width: 100%;
+      overflow-x: hidden;
+    }
+
+    /* Background Video */
+    .bg-video {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1;
+    }
+
+    /* Header/Navbar Transparent */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 30px;
+      width: 100%;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 1000;
+      background: transparent; /* Fully transparent navbar */
+    }
+
+    .logo img {
+      width: 120px;
+      height: auto;
+      object-fit: contain;
+      display: block;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 16px; /* Reduced gap between buttons */
+    }
+
+    /* Navbar Links - Transparent by default */
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: 500;
+      transition: color 0.3s, background-color 0.3s;
+      background: transparent;  /* Transparent background */
+      padding: 10px 20px; /* Add some padding for clickable area */
+      border-radius: 5px; /* Optional: adds rounded corners */
+      border: 1px solid transparent; /* Transparent border */
+    }
+
+    /* On Hover and Active */
+    nav ul li a:hover,
+    nav ul li a.active {
+      color: #2ecc71; /* Green color for text on hover */
+      background-color: rgba(0, 0, 0, 0.6); /* Dark background on hover */
+      border: 1px solid #2ecc71; /* Green border on hover */
+    }
+
+    /* Hero Section */
+    .hero {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      height: 100vh;
+      padding: 20px;
+    }
+
+    .content {
+      background: rgba(0, 0, 0, 0.5);
+      padding: 40px;
+      border-radius: 15px;
+      max-width: 600px;
+    }
+
+    .content h1 {
+      font-size: 42px;
+      margin-bottom: 20px;
+    }
+
+    .content p {
+      font-size: 18px;
+      color: #ddd;
+      margin-bottom: 30px;
+    }
+
+    .btn {
+      padding: 10px 25px;
+      border: 1px solid white;
+      color: white;
+      text-decoration: none;
+      transition: all 0.3s;
+      font-size: 16px;
+    }
+
+    .btn:hover {
+      background-color: white;
+      color: black;
+    }
+
+   /* Socials */
+   .socials {
+      position: fixed;
+      bottom: 20px;
+      left: 1%;
+     
+      display: flex;
+      gap: 20px;
+      z-index: 1001;
+    }
+
+    .socials a {
+      font-size: 22px;
+      color: white;
+      transition: transform 0.3s;
+    }
+
+    .socials a:hover {
+      transform: scale(1.2);
+    }
+
+    .socials a .fa-instagram { color: #e4405f; }
+    .socials a .fa-whatsapp { color: #25D366; }
+    .socials a .fa-telegram { color: #0088cc; }
+    .socials a .fa-envelope { color: #d14836; }
+  </style>
+</head>
+
+<body>
+  <!-- Background Video -->
+  <video autoplay muted loop class="bg-video">
+    <source src="images/InShot_bg.mp4" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
+
+  <!-- Header/Navbar -->
+  <header>
+    <div class="logo">
+      <img src="images/TK.png" alt="Logo" />
+    </div>
+    <nav>
+      <ul>
+        <li><a href="home.html" class="active">Home</a></li>
+        <li><a href="about.html">About Me</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="skills.html">Skills</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="CV/ResumeBro.pdf" class="download-cv" target="_blank" download>Download CV</a></li>
+        <li><a href="download-certificates.html" class="download-certificates">Download Certificates</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Socials -->
+  <div class="socials">
+    <a href="https://www.instagram.com/mrtusharkopnar?igsh=MWZ5MW00eXd6dHI4bw==" target="_blank"><i class="fab fa-instagram"></i></a>
+    <a href="https://t.ly/5-1x9" target="_blank"><i class="fab fa-whatsapp"></i></a>
+    <a href="t.me/mr_tusharkopnar" target="_blank"><i class="fab fa-telegram"></i></a>
+    <a href="mailto:youremail@example.com" target="_blank"><i class="fas fa-envelope"></i></a>
+  </div>
+
+  <script>
+    console.log("Portfolio page loaded");
+  </script>
+</body>
+</html>

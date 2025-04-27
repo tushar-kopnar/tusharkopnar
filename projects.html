@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>mrtusharkopnar</title>
+  <link rel="stylesheet" href="projects.css" />
+  <style>
+    /* General Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+  background: #0f0f0f;
+  color: #eee;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* center vertically */
+  align-items: center;      /* center horizontally */
+  height: 100vh;            /* full viewport height */
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+
+
+    header {
+      text-align: center;
+      margin-bottom: 40px;
+      animation: fadeDown 1s ease-out;
+    }
+
+    header h1 {
+  font-size: 2.8rem;
+  color: #ffffff;
+  margin-bottom: 10px;
+}
+
+header p {
+  font-size: 1.2rem;
+  color: #ffffff;
+}
+
+
+    
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 25px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+
+
+
+.project-card {
+  position: relative;
+  padding: 50px 16px;    /* slightly increased */
+  font-size: 1.3rem;      /* slightly larger text */
+  border-radius: 18px;
+  min-height: 200px;      /* slightly taller */
+  min-width: 250px;       /* slightly wider */
+  color: #fff;
+  text-align: center;
+  text-decoration: none;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  z-index: 1;
+
+  opacity: 0;
+  transform: translateY(40px) scale(0.95);
+  transition: all 0.4s ease;
+}
+
+
+
+
+    .project-card:hover {
+      transform: translateY(-10px) scale(1.02);
+      box-shadow: 0 0 15px rgba(255, 223, 0, 0.5),
+                  0 0 30px rgba(255, 223, 0, 0.4),
+                  0 0 45px rgba(255, 223, 0, 0.3);
+    }
+
+    .project-card::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.4);
+      border-radius: 20px;
+      z-index: 0;
+    }
+
+    .project-card span {
+  font-size: 1.4rem;
+}
+    .project-card.show {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+
+    @keyframes fadeDown {
+      from {
+        opacity: 0;
+        transform: translateY(-40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Background Images */
+    #cinematic {
+      background-image: url('projectsLogo/cinematicVideos.jpg');
+    }
+
+    #wedding-films {
+      background-image: url('projectsLogo/weedingFilms.jpg');
+    }
+
+    #wedding-teaser {
+      background-image: url('projectsLogo/weedingTeaser.jpg');
+    }
+
+    #wedding-reels {
+      background-image: url('projectsLogo/weedingReels.jpg');
+    }
+
+    #bts {
+      background-image: url('projectsLogo/BTS.jpg');
+    }
+
+    #invitation {
+      background-image: url('projectsLogo/weedingInvitation.jpg');
+    }
+
+    #birthday-banner {
+      background-image: url('projectsLogo/birthdayDesign.jpg');
+    }
+
+    #product-shoot {
+      background-image: url('projectsLogo/productShoot.jpg');
+    }
+
+    #motion-graphics {
+      background-image: url('projectsLogo/motionGraphics.jpg');
+    }
+
+    #photographs {
+      background-image: url('projectsLogo/myPhotographs.jpg');
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>My Projects</h1>
+    <p>Explore my work across different creative categories.</p>
+  </header>
+
+  <section class="projects-grid">
+    <a href="cinematic.html" class="project-card" id="cinematic"></a>
+    <a href="wedding-films.html" class="project-card" id="wedding-films"></a>
+    <a href="wedding-teaser.html" class="project-card" id="wedding-teaser">></a>
+    <a href="wedding-reels.html" class="project-card" id="wedding-reels"></a>
+    <a href="bts.html" class="project-card" id="bts"></a>
+    <a href="WeedingInvitation.html" class="project-card" id="invitation"></a>
+    <a href="birthday-banner.html" class="project-card" id="birthday-banner"></a>
+    <a href="product-shoot.html" class="project-card" id="product-shoot"></a>
+    <a href="motion-graphics.html" class="project-card" id="motion-graphics"></a>
+    <a href="myPhotographs.html" class="project-card" id="photographs"></a>
+  </section>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const cards = document.querySelectorAll(".project-card");
+
+      const scrollReveal = () => {
+        const triggerBottom = window.innerHeight * 0.85;
+        cards.forEach(card => {
+          const cardTop = card.getBoundingClientRect().top;
+          if (cardTop < triggerBottom) {
+            card.classList.add("show");
+          }
+        });
+      };
+
+      window.addEventListener("scroll", scrollReveal);
+      scrollReveal();
+
+      const actions = {
+        cinematic: "Opening Cinematic Videos...",
+        "wedding-cinematic": "Opening Wedding Cinematic Videos...",
+        "wedding-teaser": "Opening Wedding Teaser...",
+        "wedding-reels": "Opening Wedding Reels...",
+        bts: "Opening Work BTS...",
+        invitation: "Opening Wedding Invitation Design...",
+        "birthday-banner": "Opening Birthday Banner Designs...",
+        "product-shoot": "Opening Product Shoot...",
+        "motion-graphics": "Opening Motion Graphics...",
+        photographs: "Opening My Photographs..."
+      };
+
+      Object.keys(actions).forEach(id => {
+        const card = document.getElementById(id);
+        if (card) {
+          card.addEventListener("click", e => {
+  if (card.getAttribute("href") === "#") {
+    e.preventDefault();
+    alert(actions[id]);
+  }
+});
+        }
+      });
+    });
+  </script>
+</body>
+</html>

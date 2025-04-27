@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>mrtusharkopnar</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: #0f0f0f;
+      color: #fff;
+      font-family: 'Segoe UI', sans-serif;
+      padding: 30px 20px;
+      overflow-x: hidden;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 3rem;
+      margin-bottom: 40px;
+      animation: fadeInDown 1s ease;
+      color: #ffffff;
+      text-shadow: 0 0 10px rgba(255,255,255,0.5);
+    }
+
+    .gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* ← This makes 3 items per row */
+  gap: 20px;
+  max-width: 1200px;
+  margin: auto;
+  opacity: 0;
+  animation: fadeIn 1.5s ease 0.5s forwards;
+}
+
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.gallery img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+  cursor: pointer;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+
+  /* Animation */
+  animation: fadeUp 1s ease forwards;
+  animation-delay: calc(var(--i) * 0.1s); /* different delay for each image */
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.gallery img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+}
+
+    .gallery img.loaded {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Lightbox styles */
+    .lightbox {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.9);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+      visibility: hidden;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .lightbox.active {
+      visibility: visible;
+      opacity: 1;
+    }
+
+    .lightbox img {
+      max-width: 90%;
+      max-height: 80%;
+      border-radius: 10px;
+      box-shadow: 0 0 30px rgba(255, 255, 255, 0.3);
+    }
+
+    .lightbox:after {
+      content: '×';
+      position: absolute;
+      top: 30px;
+      right: 40px;
+      font-size: 3rem;
+      color: #fff;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>Product Shoots</h1>
+  <div class="gallery" id="gallery">
+    <img src="productShoots/product1.JPG" alt="Product 1">
+    <img src="productShoots/product2.JPG" alt="Product 2">
+    <img src="productShoots/product3.JPG" alt="Product 3">
+    <img src="productShoots/product4.JPG" alt="Product 4">
+    <img src="productShoots/product5.JPG" alt="Product 5">
+    <img src="productShoots/product6.JPG" alt="Product 6">
+    <img src="productShoots/product7.JPG" alt="Product 7">
+    <img src="productShoots/product8.JPG" alt="Product 8">
+   
+    <img src="productShoots/product10.JPG" alt="Product 10">
+    <img src="productShoots/product11.JPG" alt="Product 11">
+    <img src="productShoots/product12.JPG" alt="Product 12">
+    <img src="productShoots/product13.JPG" alt="Product 13">
+  </div>
+
+  <!-- Lightbox Element -->
+  <div class="lightbox" id="lightbox">
+    <img src="" alt="Lightbox Image" id="lightbox-img">
+  </div>
+
+  <script>
+    // Animate image entry
+    window.addEventListener("load", () => {
+      const imgs = document.querySelectorAll(".gallery img");
+      imgs.forEach((img, index) => {
+        setTimeout(() => {
+          img.classList.add("loaded");
+        }, index * 100);
+      });
+    });
+
+    // Lightbox logic
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImg = document.getElementById("lightbox-img");
+    const galleryImgs = document.querySelectorAll(".gallery img");
+
+    galleryImgs.forEach(img => {
+      img.addEventListener("click", () => {
+        lightboxImg.src = img.src;
+        lightbox.classList.add("active");
+      });
+    });
+
+    lightbox.addEventListener("click", () => {
+      lightbox.classList.remove("active");
+      lightboxImg.src = "";
+    });
+  </script>
+</body>
+</html>

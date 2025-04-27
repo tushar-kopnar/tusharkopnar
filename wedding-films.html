@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>mrtusharkopnare</title>
+  <link rel="stylesheet" href="wedding-films.css" />
+  <style>
+    /* General Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+      background: #0f0f0f;
+      color: #eee;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 40px;
+      animation: fadeDown 1s ease-out;
+    }
+
+    header h1 {
+      font-size: 2.8rem;
+      color: #ffffff;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      color: #ffffff;
+    }
+
+   
+
+    .video-gallery {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    .video-gallery video {
+      width: 100%;
+      max-width: 400px;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(255, 223, 0, 0.5);
+    }
+
+    @keyframes fadeDown {
+      from {
+        opacity: 0;
+        transform: translateY(-40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 900px) {
+      .video-gallery {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 600px) {
+      .video-gallery {
+        grid-template-columns: 1fr;
+      }
+
+      header h1 {
+        font-size: 2.2rem;
+      }
+
+      header p {
+        font-size: 1.1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Wedding Films</h1>
+    <p>A collection of beautifully shot wedding videos showcasing love and moments.</p>
+  </header>
+
+ 
+
+  <section class="video-gallery">
+    <video controls>
+      <source src="weedingFilms/1.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+    <video controls>
+      <source src="weedingFilms/2.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+    <video controls>
+      <source src="weedingFilms/3.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+    <video controls>
+        <source src="weedingFilms/4.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+      <video controls>
+        <source src="weedingFilms/5.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+      <video controls>
+        <source src="weedingFilms/6.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+      <video controls>
+        <source src="weedingFilms/7.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+      <video controls>
+        <source src="weedingFilms/8.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+   
+  </section>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      // You can add functionality here if needed, for example:
+      // actions for click events, dynamic content loading, etc.
+    });
+  </script>
+</body>
+</html>
